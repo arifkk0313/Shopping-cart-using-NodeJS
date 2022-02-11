@@ -1,0 +1,202 @@
+
+<div class="header-section clearfix animated hdr-sticky">
+    <!-- Desktop Header -->
+    <div class="header-4">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 col-sm-8 col-md-7 col-lg-4">
+
+                        <p class="top-header_left-text float-start text-capitalize">Free Shipping | Free Returns</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 d-none d-md-none d-lg-block">
+                        <div class="text-center">
+                            <p class="top-header_middle-text transform-none">Anniversary Sale: save the date! May
+                                20-August 20, 2022. <a href="#" class="transform-none">Read more.</a></p>
+                        </div>
+                    </div>
+                    <div class="col-2 col-sm-4 col-md-5 col-lg-4 text-end">
+                        <div class="right-action text-action d-flex-align-center justify-content-end">
+                            <!-- User Links -->
+                            <div class="item site-user-menu">
+
+
+                                {{#if user}}
+                                <a href="/logout" class="icon-login text-capitalize text-nowrap"><i
+                                        class="icon an an-user-alt me-1"></i>
+                                    <span class="text align-middle">Logout</span></a>
+
+                                {{else}}
+                                <a href="/login" class="icon-login text-capitalize text-nowrap"><i
+                                        class="icon an an-user-alt me-1"></i>
+                                    <span class="text align-middle">Login</span></a>
+                                {{/if}}
+
+                            </div>
+                            <!-- End User Links -->
+                            <!-- Wishlist -->
+                            {{#if user}}
+                            <a href="/myaccount" class="icon-login text-capitalize text-nowrap"><i
+                                    class="icon an an-user-alt me-1" style="margin-left: 18px;"></i>
+                                <span class="text align-middle">My account</span></a>
+
+                            {{else}}
+
+                            {{/if}}
+                            <!-- End Wishlist -->
+                            <!-- Minicart -->
+                            {{#if user}}
+                            <div class="item site-header-wishlist d-none d-lg-block">
+                                <a href="/cart" class="icon-wishlist text-capitalize"><i
+                                        class="icon an an-shopping-bag me-1"></i><span class="text align-middle">Cart
+                                        <span class="badge badge-light" style="border: black 1px solid;"
+                                            id="cart-count">{{cartCount}}</span></span><span
+                                        class="site-header-wish-count1 d-none"
+                                        data-cart-render="item_count">(0)</span></a>
+                            </div>
+                            {{else}}
+                            {{/if}}
+                            <!-- End Minicart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Header -->
+
+        <!-- Header -->
+        <div class="header-wrap d-flex border-bottom" style="background: #e1e1e1;;">
+            <div class="container-fluid">
+                <div class="row align-items-center" >
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-8 d-block d-lg-none">
+                        <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Menu"><i
+                                class="icon an an-times"></i><i class="icon an an-bars"></i></button>
+                        <!-- Mobile Search -->
+                        <div class="site-header__search d-block d-lg-none mobile-search-icon">
+                            <button type="button" class="search-trigger" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="Search"><i class="icon an an-search"></i></button>
+                        </div>
+                        <!-- End Mobile Search -->
+                    </div>
+                    <!-- Desktop Navigation -->
+                    <div class="col-2 col-sm-3 col-md-3 col-lg-5 d-none d-lg-block">
+                        <!-- Desktop Menu -->
+                        <nav class="grid__item" id="AccessibleNav">
+                            <ul id="siteNav" class="d-flex flex-wrap site-nav medium left nolinkbg">
+
+
+                                <li class="lvl1 parent dropdown">
+                                    <a href="/">Home <i class=""></i></a>
+
+                                </li>
+
+                                <li class="lvl1 parent dropdown">
+                                    <a href="">Categories <i class="an an-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        {{#each catagory}}
+                                        <li><a href="/categorypage/{{this.name}}" class="{{this.name}}">{{this.name}}</a>
+                                        </li>
+                                        {{/each}}
+
+
+                                    </ul>
+                                </li>
+
+
+                                <li class="lvl1 parent dropdown">
+                                    <a href="">Brand <i class="an an-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        {{#each brand}}
+                                        <li><a href="/brandpage/{{this.name}}" style="color: black;"
+                                                class="{{this.name}}">{{this.name}}</a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+
+                                </li>
+
+                                <li class="lvl1 parent dropdown">
+                                    <a href="/wishlist">Wishlist <i class=""></i></a>
+
+                                </li>
+                                {{#if user}}
+                                <li class="lvl1 parent dropdown">
+                                    <a href="/cart">Cart <span class="badge badge-light"
+                                            style="border: black 1px solid;" id="cart-count">{{cartCount}}</span><i
+                                            class=""></i></a>
+                                </li>
+                                {{else}}
+                                {{/if}}
+
+                                {{#if user}}
+                                <li class="lvl1 parent dropdown">
+                                    <a href="/myorders">Orders <i
+                                            class=""></i></a>
+                                </li>
+                                {{else}}
+                                {{/if}}
+                            </ul>
+                        </nav>
+                        <!-- End Desktop Menu -->
+                    </div>
+                    <!-- End Desktop Navigation -->
+                    <!-- Desktop Logo -->
+                   
+                    <div class="logo col-4 col-sm-4 col-md-4 col-lg-2 text-center">
+                        <a href="/"><img src="images/dot.jpeg"><i
+                                class=""></i> </a>
+                    </div>
+
+
+                    <!-- End Desktop Logo -->
+                    <!-- Right Side -->
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-5">
+
+                        <div class="right-action d-flex-align-center justify-content-end">
+                            {{#if user}}
+
+                            Hello {{user.Name}}
+                            {{else}}
+
+                            {{/if}}
+                            <!-- Search -->
+                            <div class="site-header__search search-bar-inline d-none d-lg-block ml-2">
+                                <form action="#" class="search-bar__form d-flex position-relative">
+                                    <input class="search__input" type="search" name="q" value=""
+                                        placeholder="Search entire store..." aria-label="Search" autocomplete="off" />
+                                    <button class="go-btn search__button" type="submit"><i
+                                            class="icon an an-search"></i></button>
+                                </form>
+                            </div>
+                            <!-- End Search -->
+                            <!-- Wishlist -->
+                            <div class="item site-header-wishlist d-block d-lg-none">
+                                <a href="wishlist.html" class="wishlist-trigger" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Wishlist">
+                                    <i class="icon an an-heart"></i><span class="site-header-wish-count">2</span>
+                                </a>
+                            </div>
+                            <!-- End Wishlist -->
+                            <!-- Minicart -->
+                            <div class="item site-cart d-block d-lg-none" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="Cart">
+                                <a href="#" class="site-header__cart btn-minicart" data-bs-toggle="modal"
+                                    data-bs-target="#minicart-drawer">
+                                    <i class="icon an an-shopping-bag"></i><span
+                                        class="site-header__cart-count">2</span>
+                                </a>
+                            </div>
+                            <!-- End Minicart -->
+                        </div>
+                    </div>
+                    <!-- End Right Side -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header -->
+    </div>
+    <!-- End Desktop Header -->
+</div>
+<!-- End Main Header -->

@@ -1,0 +1,75 @@
+<div class="container height-100 d-flex justify-content-center
+    align-items-center">
+    <div class="position-relative">
+        <div class="card p-2 text-center">
+
+            {{!-- <form method="post" action="/signup/otp" accept-charset="UTF-8" class="customer-form"> --}}
+
+            <form method="post" action="/login/otp" accept-charset="UTF-8" class="customer-form">
+                   
+                       {{#if loginErrotp}}
+            <p class="error" style="color: #ff0000;"> * * * Invalid OTP * * *
+              </p>
+          {{/if}}
+                <h6>Please enter the one time password <br> to verify your
+                    account</h6>
+                <div> <span>A code has been sent </span> <small></small>
+                </div>
+                <div>Time left : <span id="timer"></span></div>
+                <div id="otp" class="inputs d-flex flex-row
+                    justify-content-center mt-2">
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1"
+                        name="otp" />
+                    <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1"
+                        name="otp" /> <input class="m-2
+                        text-center form-control rounded" type="text" id="third" maxlength="1" name="otp" />
+                    <input class="m-2 text-center
+                        form-control rounded" type="text" id="fourth" maxlength="1" name="otp" />
+                    <input class="m-2 text-center
+                        form-control rounded" type="text" id="fifth" maxlength="1" name="otp" />
+                    <input class="m-2 text-center
+                        form-control rounded" type="text" id="sixth" maxlength="1" name="otp" />
+                </div>
+                <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button>
+                </div>
+        </div>
+        <div class="card-2">
+            <input type="text" name="otp" placeholer="Enter your otp" />
+            <a method="get" class="btn btn-danger btn-sm" href="/resentOTPlogin" >resentOTP </a>
+            {{!-- <div class="content d-flex justify-content-center
+                    align-items-center"> <span>Resent</span> <a href="#" class="text-decoration-none ms-3"></a> </div> --}}
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let timerOn = true;
+
+    function timer(remaining) {
+        var m = Math.floor(remaining / 60);
+        var s = remaining % 60;
+
+        m = m < 10 ? '0' + m : m;
+        s = s < 10 ? '0' + s : s;
+        document.getElementById('timer').innerHTML = m + ':' + s;
+        remaining -= 1;
+
+        if (remaining >= 0 && timerOn) {
+            setTimeout(function () {
+                timer(remaining);
+            }, 1000);
+            return;
+        }
+
+        if (!timerOn) {
+            // Do validate stuff here
+            return;
+        }
+
+        // Do timeout stuff here
+        alert('Timeout for otp');
+    }
+
+    timer(120);
+
+</script>

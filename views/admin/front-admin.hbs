@@ -1,0 +1,385 @@
+<body style="padding: 0%;">
+
+
+
+  <body style="padding: 0%;">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/admin-head/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/admin-head/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/admin-head/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="/admin-head/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/admin-head/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/admin-head/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/admin-head/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/admin-head/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="/admin-head/images/favicon.ico" />
+
+
+
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" href="index.html">
+            <img src="/admin-head/images/logo.svg" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="index.html">
+            <img src="/admin-head/images/logo-mini.svg" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+
+          <form class="ml-auto search-form d-none d-md-block" action="#">
+            <div class="form-group">
+              <input type="search" class="form-control" placeholder="Search Here">
+            </div>
+          </form>
+
+          <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle" style="color: black;"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+              </svg>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <i class="bi bi-person-circle" style="color: black;"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                  </svg>
+                  <p class="mb-1 mt-3 font-weight-semibold" id="adminname">{{user.Name}}</p>
+                  <p class="font-weight-light text-muted mb-0">{{user.Email}}</p>
+                </div>
+
+                <a href="" class="dropdown-item">My Account<i class="dropdown-item-icon ti-comment-alt"></i></a>
+                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
+                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
+
+                <a href="/admin/logout-admin" class="dropdown-item">Sign out<i
+                    class="dropdown-item-icon ti-power-off"></i></a>
+              </div>
+
+          </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+
+
+      <script src="/admin-head/vendors/js/vendor.bundle.addons.js"></script>
+      <script src="/admin-head/vendors/js/vendor.bundle.base.js"></script>
+
+      <!-- endinject -->
+      <!-- Plugin js for this page-->
+      <!-- End plugin js for this page-->
+      <!-- inject:js -->
+      <script src="/admin-head/js/shared/off-canvas.js"></script>
+      <script src="/admin-head/js/shared/misc.js"></script>
+
+      <!-- endinject -->
+      <!-- Custom js for this page-->
+      <script src="/admin-head/js/demo_1/dashboard.js"></script>
+
+      <!-- End custom js for this page-->
+      <script src="/admin-head/js/shared/chart.js"></script>
+      <script src="/admin-head/js/shared/jquery.cookie.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" style="margin-top: -24px;" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="profile-image">
+                  <img class="img-xs rounded-circle" src="/admin-head/images/faces/face8.jpg" alt="profile image">
+                  <div class="dot-indicator bg-success"></div>
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">allenmoreno</p>
+                  <p class="designation">Premium user</p>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item nav-category">Main Menu</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/front-admin">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/orders">
+                <i class="menu-icon typcn typcn-th-large-outline"></i>
+                <span class="menu-title">Orders</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/all-products">
+                <i class="menu-icon typcn typcn-bell"></i>
+                <span class="menu-title">All Products</span>
+              </a>
+
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Users</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/users">All Users</a>
+                  </li>
+
+                  
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <i class="menu-icon typcn typcn-document-add"></i>
+                <span class="menu-title">Products</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/add-product"> Add Products </a>
+                  </li>
+
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/category"> Category </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/brand"> Brand </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+              <div class="col-12">
+                <div class="page-header">
+                  <h4 class="page-title">Dashboard</h4>
+                  <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                    <ul class="quick-links">
+                      <li><a href="#">ICE Market data</a></li>
+                      <li><a href="#">Own analysis</a></li>
+                      <li><a href="#">Historic market data</a></li>
+                    </ul>
+                    <ul class="quick-links ml-auto">
+                      <li><a href="#">Settings</a></li>
+                      <li><a href="#">Analytics</a></li>
+                      <li><a href="#">Watchlist</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <!-- Page Title Header Ends-->
+            <div class="row">
+              <div class="col-md-12 grid-margin">
+                <div class="card" style="width: 100%; height:200px">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-6">
+                        <div class="d-flex">
+                          <div class="wrapper">
+                            <h3 class="mb-0 font-weight-semibold">45</h3>
+                            <h5 class="mb-0 font-weight-medium text-primary">Visits</h5>
+                            <p class="mb-0 text-muted">+1.00(+0.50%)</p>
+                          </div>
+                          <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <canvas height="50" width="100" id="stats-line-graph-1"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4" style="margin-left: 100px;">
+                        <div class="d-flex">
+                          <div class="wrapper">
+                            <h3 class="mb-0 font-weight-semibold">7</h3>
+                            <h5 class="mb-0 font-weight-medium text-primary">Conversation</h5>
+                            <p class="mb-0 text-muted">+1.62(+0.76%)</p>
+                          </div>
+                          <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <canvas height="50" width="100" id="stats-line-graph-3"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4" style="margin-left: 100px;">
+                        <div class="d-flex">
+                          <div class="wrapper">
+                            <h3 class="mb-0 font-weight-semibold">1</h3>
+                            <h5 class="mb-0 font-weight-medium text-primary">Users</h5>
+                            <p class="mb-0 text-muted">+.97(+0.54%)</p>
+                          </div>
+                          <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <canvas height="50" width="100" id="stats-line-graph-4"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body pb-0">
+                        <div class="d-flex justify-content-between">
+                          <h4 class="card-title mb-0" style="font-size: 20px;">Total Revenue :</h4>
+                          <p class="font-weight-semibold mb-0 ml-3" style="font-size: 20px;">+1.37%</p>
+                        </div>
+                        <h3 class="font-weight-medium mb-4" style="    font-weight: bold;
+    margin-top: 36px;
+    font-size: 50px;">₹ {{revenue}}</h3>
+                      </div>
+                      <canvas class="mt-n4" height="90" id="total-revenue"></canva>
+                    </div>
+                  </div>
+                  <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body pb-0">
+                        <div class="d-flex justify-content-between ">
+                          <h4 class="card-title mb-0 mt-1" style="font-size: 20px;">totalusers :</h4>
+                          <p class="font-weight-semibold mb-0 ml-3 " style="font-size: 20px;">-2.87%</p>
+                        </div>
+                        <h3 class="font-weight-medium" style="    font-weight: bold;
+    margin-top: 36px;
+    font-size: 50px;">{{totalUsers}}</h3>
+                      </div>
+
+                      <canvas class="mt-n3" height="90" id="total-transaction"></canva>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-12 grid-margin">
+                    <div class="card" style="height: 400px; width:100%">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h4 class="card-title mb-0">Invoice</h4>
+                          <h2>Recent Orders</h2>
+                        </div>
+
+                        <div class="table-responsive">
+                          <table class="table table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th>Date</th>
+                                <th>Order Id</th>
+                                <th>Total Amount</th>
+                                <th>Payment Method</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {{#each history}}
+                              <tr>
+                                <td>{{this.Date}}</td>
+                                <td>{{this._id}}</td>
+                                <td>{{this.totalAmount}}</td>
+                                <td>{{this.paymentMethod}}</td>
+                                
+                              </tr>
+
+                            {{/each}} 
+                            </tbody>
+                            
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-12 grid-margin">
+                    <div class="card" style="height: 140px;">
+                      <div class="card-body">
+                        <h6 class="text-muted font-semibold">products Stock</h6>
+                        <h6 class="font-extrabold mb-0">{{totalproducts}}</h6>
+                      </div>
+                    </div>
+                    <div class="card" style="height: 140px;">
+                      <div class="card-body">
+                        <h6 class="text-muted font-semibold">Total Orders</h6>
+                        <h6 class="font-extrabold mb-0">{{totalOrders}}</h6>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+           
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+      <!-- plugins:js -->
+
+
+
+
+
+
+  </body>

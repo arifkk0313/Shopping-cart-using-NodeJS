@@ -1,0 +1,277 @@
+
+<div class="container">
+
+
+<div id="app">
+	<div id="sidebar" class="active">
+
+
+
+		
+
+
+		<!-- // Basic multiple Column Form section start -->
+		<section id="multiple-column-form">
+
+			<form action="/admin/add-product" method="post" enctype="multipart/form-data"
+				onsubmit="return fieldfileld()">
+
+				<!-- Basic File Browser end -->
+				<div class="row match-height">
+					<div class="col-12">
+						<div class="card" style="width: 100%;height:100%">
+							<div class="card-header">
+								<h4 class="card-title">Add Product</h4>
+							</div>
+							<div class="card-content">
+								<div class="card-body">
+
+									<div class="row">
+										<div class="col-md-6
+                                                col-12">
+											<div class="form-group">
+												<label for="first-name-column">Name of product</label>
+												<input type="text" id="name" class="form-control"
+													placeholder="Name of product" name="name">
+												<span id="Name" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+										<div class="col-md-6
+                                                col-12">
+
+											<div class="form-group ">
+												<label for="category">Category</label>
+												<select name="catagory" id="category" class="custom-select p-2">
+													<option  value="" selected>Choose a Category</option>
+
+													{{#each category}}
+													<option value="{{this.name}}">{{this.name}}</option>                                                    
+													{{/each}}
+												</select>
+												<span id="Cat" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+										
+										<div class="col-md-6
+                                                col-12">
+											<div class="form-group">
+												<label for="city-column">Size</label>
+												<input type="number" id="size" class="form-control" placeholder="Enter the Size"
+													name="size">
+												<span id="proSize" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+
+										
+
+										<div class="col-md-6
+                                                col-12">
+											<div class="form-group">
+												<label for="company-column">Colour</label>
+												<input type="text" id="colour" class="form-control" name="colour"
+													placeholder="Enter the colour">
+												<span id="Colour" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+                                                   
+												    
+										<div class="col-md-6
+                                                col-12">
+
+
+											<div class="form-group">
+												<label for="country-floating">Brand</label>
+												<div>
+													<select name="brand" id="brand" class="custom-select p-2">
+
+														<option value="" selected>Choose a Brand</option>
+                                                        {{#each brand}}
+														
+														<option value="{{this.name}}">{{this.name}}</option>
+                                                        {{/each}}
+                                                        
+                                                        
+														
+													</select>
+													<span id="Brand" class="text-danger font-weight-regular">
+													</span>
+												</div>
+												</select>
+
+											</div>
+										</div>
+
+
+										<div class="col-md-6
+                                                col-12">
+											<div class="form-group">
+												<label for="company-column">price</label>
+												<input type="number" id="price" class="form-control" name="price"
+													placeholder="Enter the Price">
+												<span id="Price" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+
+
+										<div class="col-md-6
+                                                col-12">
+											<div class="form-group">
+												<label for="company-column">Stock</label>
+												<input type="number" id="stock" class="form-control" name="stock"
+													placeholder="Enter the stock">
+												<span id="Stock" class="text-danger font-weight-regular">
+												</span>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div id="image-box1" style="width: 300px; height: 300px; display: none;">
+					</div>
+					<div>
+						<button class="btn btn-primary mt-3" type="button" style="display: none;"
+							id="crop-btn1">Done</button>
+					</div>
+					<div class="mt-5 col-md-6">
+						<label for="">IMAGE1</label>
+						<img src="" alt="" style="width: 100px; height:auto" id="imgview1">
+						<input type="file" name="image1" id="file1" class="form-control"
+							onchange="return fileValidation1()">
+					</div>
+					<div class="mt-5 col-md-6">
+						<label for="">IMAGE 2</label>
+						<img src="" alt="" style="width: 100px; height:auto" id="imgview2">
+						<input type="file" name="image2" id="file2" class="form-control"
+							onchange="return fileValidation2()">
+					</div>
+					<div class="mt-5 col-md-6">
+						<label for="">IMAGE 3</label>
+						<img src="" alt="" style="width: 100px; height:auto" id="imgview3">
+						<input type="file" name="image3" id="file3" class="form-control"
+							onchange="return fileValidation3()">
+					</div>
+					<div class="mt-5 col-md-6">
+						<label for="">IMAGE 4</label>
+						<img src="" alt="" style="width: 100px; height:auto" id="imgview4">
+						<input type="file" name="image4" id="file4" class="form-control"
+							onchange="return fileValidation4()">
+					</div>
+
+				</div>
+
+				<p class="text-danger text-center" style="display: none;" id="errMsg">Only Image is
+					Accepted</p>
+
+				<center>
+					<button id="confirm-btn1" type="submit" class="btn btn-primary mt-5">Add
+						Product</button><br>
+				</center>
+			</form>
+		</section>
+		<!-- // Basic multiple Column Form section end -->
+	</div>
+</div>
+</div>
+
+
+
+<script>
+
+
+
+	function fieldfileld() {
+
+		var name = document.getElementById("name").value;
+		var category = document.getElementById("category").value;
+		var subcategory = document.getElementById("subcategory").value;
+		
+		var brand = document.getElementById("brand").value;
+		var colour = document.getElementById("colour").value;
+		var price = document.getElementById("price").value;
+		var stock = document.getElementById("stock").value;
+
+
+
+		if (name == "") {
+			document.getElementById("Name").innerHTML =
+				" ** Please enter the product Name ";
+			return false;
+		}else{
+                    document.getElementById("Name").innerHTML=""
+                }
+            
+
+
+		if (category == "") {
+			document.getElementById("Cat").innerHTML =
+				" ** Please enter the  Catagary ";
+			return false;
+		}else{
+                    document.getElementById("Cat").innerHTML=""
+                }
+
+		if (subcategory == "") {
+			document.getElementById("sub").innerHTML =
+				" ** Please enter the  SubCatagary ";
+			return false;
+		}else{
+                    document.getElementById("sub").innerHTML=""
+                }
+
+		if (size == "") {
+			document.getElementById("proSize").innerHTML =
+				" ** Please enter the  Size ";
+			return false;
+		}else{
+                    document.getElementById("proSize").innerHTML=""
+                }
+		if (brand == "") {
+			document.getElementById("Brand").innerHTML =
+				" ** Please enter the  Brand";
+			return false;
+		}else{
+                    document.getElementById("Brand").innerHTML=""
+                }
+            
+		if (colour == "") {
+			document.getElementById("Colour").innerHTML =
+				" ** Please enter the  colour ";
+			return false;
+		}else{
+                    document.getElementById("Colour").innerHTML=""
+                }
+
+		if (price == "") {
+			document.getElementById("Price").innerHTML =
+				" ** Please enter the  Price ";
+			return false;
+		}else{
+                    document.getElementById("Price").innerHTML=""
+                }
+				if (stock == "") {
+			document.getElementById("Stock").innerHTML =
+				" ** Please enter the  stock ";
+			return false;
+		}else{
+                    document.getElementById("Stock").innerHTML=""
+                }
+
+
+
+
+	}
+
+	
+</script>

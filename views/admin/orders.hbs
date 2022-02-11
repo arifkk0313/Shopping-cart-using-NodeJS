@@ -1,0 +1,138 @@
+<div class="container">
+<div id="app">
+
+    <div id="sidebar" class="active">
+        <div class="page-heading">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3 class="mt-5">Order History</h3>
+                        <p class="text-subtitle text-muted"></p>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="section">
+                <div class="card" style="width: 1300px;  height:auto">
+                    <div class="card-header">
+                       
+                    </div>
+                    <div class="card-body" style="width: 1200px;">
+                        <table class="table table-striped" id="table1">
+                            <thead>
+                                <tr >
+                                    
+                                    <th>Date</th>
+                                    <th>User</th>
+                                    <th>Address</th>
+                                    <th>Amount</th>
+                                    <th>payment method</th>
+                                    
+                                   <th >Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                               {{#each history}}
+                            <tr>
+                               
+                                <td>{{this.date}} <br>
+                                    
+
+                                <td>{{this.deliveryDetails.name}}</td>
+                                <td>{{this.deliveryDetails.name}},<br>{{this.deliveryDetails.building}}<br>{{this.deliveryDetails.address}},PIN:{{this.deliveryDetails.pincode}}<br>PH:{{this.deliveryDetails.mobile}}
+                                </td>
+                                <td>₹{{this.totalAmount}}</td>
+                                   <td>{{this.paymentMethod}}</td>
+                                   
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-dark dropdown-toggle p-1" type="button" id="{{this._id}}"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            style="height: 2em;width:7em" value="{{this.status}}"
+                                            onclick="statusChecker('{{this._id}}')">
+                                            {{this.status}}
+                                        </button>
+                                       </button>
+                                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="/admin/placed/{{this._id}}"
+                                                onclick="changeStatus(event)" style="text-decoration: none;"
+                                                id="{{this._id}}placed">Placed</a>
+                                            <a class="dropdown-item" href="/admin/shipped/{{this._id}}"
+                                                onclick="changeStatus(event)" style="text-decoration: none;"
+                                                id="{{this._id}}ship">Shipped</a>
+                                            <a class="dropdown-item" href="/admin/delivered/{{this._id}}"
+                                                onclick="changeStatus(event)" style="text-decoration: none;"
+                                                id="{{this._id}}deliver">Delivered</a>
+                                            <a class="dropdown-item" href="/admin/cancelled/{{this._id}}"
+                                                onclick="changeStatus(event)" style="text-decoration: none;"
+                                                id="{{this._id}}cancel">Cancelled</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{{!-- Scripts --}}
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script>
+    function statusChecker(orderId) {
+        console.log("llog", orderId)
+        let status = document.getElementById(orderId).value
+
+        console.log('ja', status)
+        if (status === 'Placed') {
+            console.log("Placed")
+            document.getElementById(orderId + 'placed').style.display = "none";
+
+        } else if (status === 'Shipped') {
+            console.log("Shipped")
+            document.getElementById(orderId + 'placed').style.display = "none";
+            document.getElementById(orderId + 'ship').style.display = "none";
+
+        } else if (status === 'Delivered') {
+            document.getElementById(orderId + 'placed').style.display = "none";
+            document.getElementById(orderId + 'ship').style.display = "none";
+            document.getElementById(orderId + 'cancel').style.display = "none";
+            document.getElementById(orderId + 'deliver').style.display = "none";
+
+        } else if (status === 'Cancelled') {
+            document.getElementById(orderId + 'placed').style.display = "none";
+            document.getElementById(orderId + 'ship').style.display = "none";
+            document.getElementById(orderId + 'deliver').style.display = "none";
+            document.getElementById(orderId + 'cancel').style.display = "none";
+        }
+    }
+</script>
+
+<script src="/admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/admin/assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="/admin/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script>
+    // Simple Datatable
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script>
+
+<script src="/admin/assets/js/main.js"></script>
+
+
+

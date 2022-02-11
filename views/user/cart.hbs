@@ -1,0 +1,251 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Body Content -->
+<div id="page-content">
+    <!--Page Title-->
+    <div class="page section-header text-center">
+        <div class="page-title">
+            <div class="wrapper">
+                <h1 class="page-width">cart</h1>
+            </div>
+        </div>
+    </div>
+    <!--End Page Title-->
+
+
+    <!-- Breadcrumbs -->
+    <div class="bredcrumbWrap bredcrumbWrapPage bredcrumb-style2 text-center">
+        <div class="container breadcrumbs">
+            <a href="/" title="Back to the home page">Go Back</a><span aria-hidden="true">|</span><span
+                class="title-bold">Cart</span>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                <div class="wishlist-table table-content table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="TI">
+                                <th class="product-name text-center alt-font">Remove</th>
+                                <th class="product-price text-center alt-font">Images</th>
+                                <th class="product-name alt-font text-center alt-font">Product Detail</th>
+                                <th class="product-price text-center alt-font">Quantity</th>
+                                <th class="product-price text-center alt-font">Unit Price</th>
+                                <th class="product-subtotal text-center alt-font">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each product}}
+                            <tr class="tr">
+
+
+
+                                <td class="product-remove text-center">
+                                    <li><button value="{{this.item}}" style="padding: 0%;" type="button"
+                                            class="btn btn-info delete" data-bs-toggle="modal"
+                                            data-bs-target="#myModal"><i class="fa fa-shopping-bag"></i> Remove</button>
+                                    </li>
+                                </td>
+
+                                </td>
+                                {{!-- delete custom window --}}
+
+                                <section class="modalcustomconfirmation">
+
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog modal-dialog-centered modal-confirm">
+                                            <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title w-100">Are you sure?</h4>
+                                                    <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+
+                                                    <p>Do you really want to delete these records? This process cannot
+                                                        be undone.</p>
+
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+
+
+                                                    <a href="" class="btn btn-outline-danger confirm">Confirm</a>
+                                                    <button type="button" class="btn btn-danger"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+                                <td class="product-thumbnail text-center">
+                                    <a href=""><img class="cart__image blur-up lazyload"
+                                            src="/products/{{this.product._id}}1.jpg" alt="loading">
+                                    </a>
+                                </td>
+
+
+                                <td class="product-name align-center">
+
+                                    <h4 class="no-margin"><a href="">For:{{this.product.catagory}}</a></h4>
+                                    <h4 class="no-margin"><a href="">Product:{{this.product.name}}</a></h4>
+                                    <h4 class="no-margin"><a href="">Brand:{{this.product.brand}}</a></h4>
+                                    <h4 class="no-margin"><a href="">Colour:{{this.product.colour}}</a></h4>
+                                    <h4 class="no-margin"><a href="">Price:{{this.product.price}}</a></h4>
+                                    <h4 class="no-margin"><a href="">Size:{{this.product.size}}</a></h4>
+                                </td>
+
+
+                                <td class="product-price text-center">
+
+                                    <div class="cart__qty text-center">
+                                        <div class="qtyField">
+                                            <button type="button" class="cart-items-count" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                                            <span class="mt-2" id="{{this.product._id}}">{{this.quantity}}</span>
+                                            <button type="button" class="cart-items-count" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+
+
+                                <td class=" text-center"><span class="amount">₹{{this.product.price}}</span>
+                                </td>
+
+
+                                <td class="product-price text-center">
+                                    {{#if this.products.subtotal}}
+                                    <span class="subTotal" id="subTotal">₹{{this.products.subtotal}}</span>
+                                    {{else}}
+                                    <span class="subTotal" id="subTotal">₹{{this.product.price}}</span>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4
+                        cart__footer">
+                    <div class="solid-border">
+
+                        <div class="row border-bottom pb-2 pt-2">
+                            <span class="col-12 col-sm-6
+                                    cart__subtotal-title"> </span>
+                            <span class="col-12 col-sm-6 text-right">
+                            </span>
+                        </div>
+                        <div class="row border-bottom pb-2 pt-2">
+                            <span class="col-12 col-sm-6
+                                    cart__subtotal-title">Shipping</span>
+                            <span class="col-12 col-sm-6 text-right">Free
+                                shipping</span>
+                        </div>
+                        <div class="row border-bottom pb-2 pt-2">
+                            <span class="col-12 col-sm-6
+                                    cart__subtotal-title"><strong>Total</strong></span>
+                            
+                            <span class="col-12 col-sm-6 cart_subtotal-title cart_subtotal text-right">
+                                <span class="money" id="total"> ₹ {{totalValue}}</span></span>
+                            
+            
+                            
+
+                        </div>
+                        <div class="cart__shipping">Shipping &amp; taxes
+                            calculated at checkout</div>
+                        <div class="customCheckbox cart_tearm">
+                            <input type="checkbox" value="allen-vela" id="1532947863384-0">
+
+                        </div>
+                        <a href="/place-order" id="cartCheckout" class="btn
+                                btn--small-wide checkout" style="border: black 1px solid;color:black">Proceed To
+                            Checkout</a>
+                        <div class="paymnet-img"><img src="/user/assets/images/payment-img.jpg" alt="Payment" /></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="bredcrumbWrap bredcrumbWrapPage bredcrumb-style2 text-center">
+        <div class="container breadcrumbs">
+            <a href="/" title="Back to the home page"> </a><span aria-hidden="true"> </span><span class="title-bold">
+            </span>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+
+</div>
+
+<script>
+    $(document).on("click", ".delete", function () {
+        var value = $(this).val();
+        console.log("value : ", $(this).val())
+
+        $(".modal-dialog .confirm").attr("href", "/remove-cart/" + value)
+    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+    function changeQuantity(cartId,proId,userId,count){
+        
+        let quantity = parseInt(document.getElementById(proId).innerHTML)
+        
+        count = parseInt(count)
+        
+        $.ajax({
+            url:'/change-product-quantity',
+            data:{
+                user:userId,
+                cart:cartId,
+                product:proId,
+                count:count,
+                quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+                if(response.removeProduct){
+                    alert('product removed from cart')
+                    location.reload()
+
+                }else{
+                    document.getElementById(proId).innerHTML=quantity+count
+                    document.getElementById('total').innerHTML=response.total
+                    e.target.closest('.tr').querySelector('.subTotal').innerHTML = response.subTotal
+
+                }
+            }
+
+        })
+
+    }
+</script>

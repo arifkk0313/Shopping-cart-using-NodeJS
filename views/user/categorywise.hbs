@@ -1,0 +1,132 @@
+ <div class="container">
+                    <div class="row">
+                        <!-- Main Content -->
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9 main-col">
+                           
+                           
+
+                            <div class="productList" style="margin-top: 100px;">
+                                <!-- Toolbar -->
+                                <div class="toolbar">
+                                    <div class="filters-toolbar-wrapper">
+                                        <div class="row">
+                                            <div class="col-4 col-md-4 col-lg-4 filters-toolbar__item collection-view-as d-flex justify-content-Start align-items-center">
+                                                <button type="button" class="btn-filter d-block d-md-block d-lg-none icon an an-sliders-h" data-bs-toggle="tooltip" data-bs-placement="top" title="Filters"></button>
+                                                
+   
+                                            </div>
+                                            <div class="col-4 col-md-4 col-lg-4 text-center filters-toolbar__item filters-toolbar__item--count d-flex justify-content-center align-items-center">
+                                               
+                                            </div>
+                                            <div class="col-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center text-end">
+                                                <div class="filters-toolbar__item">
+                                                    <label for="SortBy" class="hidden">Sort</label>
+                                                    <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort">
+                                                        <option value="title-ascending" selected="selected">Sort</option>
+                                                        <option>Best Selling</option>
+                                                        <option>Alphabetically, A-Z</option>
+                                                        <option>Alphabetically, Z-A</option>
+                                                        <option>Price, low to high</option>
+                                                        <option>Price, high to low</option>
+                                                        <option>Date, new to old</option>
+                                                        <option>Date, old to new</option>
+                                                    </select>
+                                                    <input class="collection-header__default-sort" type="hidden" value="manual">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Toolbar -->
+
+                                <div class="grid-products grid--view-items product-four-load-more">
+                                    <div class="row">
+                                        {{#each data}}
+                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
+                                            <!-- Product Image -->
+                                            <div class="product-image">
+                                                <!-- Product Image -->
+                                                <a href="/productview/{{this._id}}">
+                                                    <!-- Image -->
+                                                    <img class="primary blur-up lazyload" data-src="/products/{{this._id}}1.jpg" src="/products/{{this._id}}1.jpg" alt="image" title="product">
+                                                    <!-- End Image -->
+                                                    <!-- Hover Image -->
+                                                    <img class="hover blur-up lazyload" data-src="/products/{{this._id}}2.jpg" src="/products/{{this._id}}2.jpg" alt="image" title="product">
+                                                    <!-- End Hover Image -->
+                                                    <!-- Product Label -->
+                                                   
+                                                    <!-- End Product Label -->
+                                                </a>
+                                                <!-- End Product Image -->
+
+                                                <!-- Product Button -->
+                                               <div class="button-set">
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Search">
+                                    <a href="/add-to-cart/{{this._id}}"
+                                        onClick="window.location.href=window.location.href"
+                                        class="btn compare add-to-compare"><i class="icon an an-search"></i></a>
+                                </div>
+
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Add to Cart">
+                                    <button style="background: black;color:rgb(255, 255, 255)"
+                                        onclick="addToCart('{{this._id}}')" class="btn compare add-to-compare"><i
+                                            class="icon an an-shopping-bag"></i></button>
+
+                                </div>
+
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="add to Wishlist">
+                                    <button style="background: black;color:rgb(255, 255, 255)"
+                                        onclick="addToWishlist('{{this._id}}')" class="btn compare add-to-compare"><i
+                                            class="icon an an-heart"></i></button>
+                                </div>
+
+
+                            </div>
+                                                <!-- End Product Button -->
+                                            </div>
+                                            <!-- End Product Image -->
+
+                                            <!-- Product Details -->
+                                            <div class="product-details text-center">
+                                                <!-- Product Name -->
+                                                <div class="product-name">
+                                                    <a href="/productview/{{this._id}}">{{this.name}}</a> <br>
+                                                    <a href="/productview/{{this._id}}">{{this.brand}}</a>
+                                                    
+                                                </div>
+                                                <!-- End Product Name -->
+                                                <!-- Product Price -->
+                                                <div class="product-price">
+                                                    
+                                                    <span class="price">Rs:{{this.price}}</span>
+                                                </div>
+                                                <!-- End Product Price -->
+                                                <!-- Product Review -->
+                                                <div class="product-review">
+                                                    <i class="an an-star"></i>
+                                                    <i class="an an-star"></i>
+                                                    <i class="an an-star"></i>
+                                                    <i class="an an-star"></i>
+                                                    <i class="an an-star-half-alt"></i>
+                                                </div>
+                                                <!-- End Product Review -->
+                                                <!-- Variant -->
+                                                
+                                            </div>
+                                            <!-- End Product Details -->
+                                        </div>
+                                        {{/each}}
+                                       
+
+                            <!--Infinit Pagination-->
+                            <div class="infinitpaginOuter">
+                                <div class="infinitpagin-four">	
+                                    <a href="javascript:void(0)" class="btn loadMoreFour">Load More</a>
+                                </div>
+                            </div>
+                            <!--End Infinit Pagination-->
+                        </div>
+                        <!--End Main Content-->

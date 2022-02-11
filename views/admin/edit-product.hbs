@@ -1,0 +1,200 @@
+<div class="container">
+
+
+    <div id="app">
+        <div id="sidebar" class="active">
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+
+                <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data"
+                    onsubmit="return fieldfileld()">
+
+                    <!-- Basic File Browser end -->
+                    <div class="row match-height">
+                        <div class="col-12">
+                            <div class="card" style="width: 100%; height:100%">
+                                <div class="card-header">
+                                    <h4 class="card-title">Edit Product</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Name of product</label>
+                                                    <input type="text" id="name" class="form-control"
+                                                        placeholder="Name of product" name="name"
+                                                        value="{{product.name}}">
+                                                    <span id="Name" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6
+                                                col-12">
+
+                                                <div class="form-group ">
+                                                    <label for="category">Category</label>
+                                                    <select name="catagory" id="category" class="custom-select p-2">
+                                                        <option value="{{product.catagory}}" selected>
+                                                            {{product.catagory}}</option>
+                                                        {{#each categories}}
+                                                        <option value="{{this.name}}">{{this.name}}</option>
+                                                        {{/each}}
+                                                        {{!-- {{#each categories}} --}}
+                                                        {{!-- <option value="{{this.name}}">{{this.name}}</option> --}}
+
+                                                        {{!-- {{/each}} --}}
+                                                    </select>
+                                                    <span id="Cat" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="city-column">Size</label>
+                                                    <input type="number" id="size" class="form-control"
+                                                        placeholder="Size" name="size" value="{{product.size}}">
+                                                    <span id="proSize" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="country-floating">Brand</label>
+                                                    <div>
+                                                        <select name="brand" id="brand" class="custom-select p-2">
+                                                            <option value="{{product.brand}}" selected>{{product.brand}}
+                                                            </option>
+                                                            {{#each brands}}
+
+                                                            <option value="{{this.name}}">{{this.name}}</option>
+                                                            {{/each}}
+                                                        </select>
+                                                        <span id="Brand" class="text-danger font-weight-regular">
+                                                        </span>
+                                                    </div>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="company-column">Colour</label>
+                                                    <input type="text" id="colour" class="form-control" name="colour"
+                                                        placeholder="colour" value="{{product.colour}}">
+                                                    <span id="Colour" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="company-column">price</label>
+                                                    <input type="number" id="price" class="form-control" name="price"
+                                                        placeholder="Price" value="{{product.price}}">
+                                                    <span id="Price" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-6
+                                                col-12">
+                                                <div class="form-group">
+                                                    <label for="company-column">Stock</label>
+                                                    <input type="number" id="stock" class="form-control" name="stock"
+                                                        placeholder="Enter the stock" value="{{product.stock}}">
+                                                    <span id="Stock" class="text-danger font-weight-regular">
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="image-box1" style="width: 300px; height: 300px; display: none;">
+                        </div>
+                        <div>
+                            <button class="btn btn-primary mt-3" type="button" style="display: none;"
+                                id="crop-btn1">Done</button>
+                        </div>
+                        <div class="mt-5 col-md-6">
+                            <label for="">IMAGE 1</label>
+                            <img src="/products/{{product._id}}1.jpg" alt="" style="width: 100px; height:100px"
+                                id="imgview1">
+                            <input type="file" name="image1" id="file1" class="form-control"
+                                onchange="return viewImage1(event)">
+                        </div>
+                        <div class="mt-5 col-md-6">
+                            <label for="">IMAGE 2</label>
+
+                            <img src="/products/{{product._id}}2.jpg" alt="" style="width: 100px; height:auto"
+                                id="imgview2">
+                            <input type="file" name="image2" id="file2" class="form-control"
+                                onchange="return viewImage2(event)">
+                        </div>
+                        <div class="mt-5 col-md-6">
+                            <label for="">IMAGE 3</label>
+                            <img src="/products/{{product._id}}3.jpg" alt="" style="width: 100px; height:auto"
+                                id="imgview3">
+                            <input type="file" name="image3" id="file3" class="form-control"
+                                onchange="return viewImage3(event)">
+                        </div>
+                        <div class="mt-5 col-md-6">
+                            <label for="">IMAGE 4</label>
+                            <img src="/products/{{product._id}}4.jpg" alt="" style="width: 100px; height:auto"
+                                id="imgview4">
+                            <input type="file" name="image4" id="file4" class="form-control"
+                                onchange="return viewImage4(event)">
+                        </div>
+
+                    </div>
+
+                    <p class="text-danger text-center" style="display: none;" id="errMsg">Only Image is
+                        Accepted</p>
+
+                    <center>
+                        <button id="confirm-btn1" type="submit" class="btn btn-primary mt-5">Edit
+                            Product</button><br>
+                    </center>
+                </form>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+function viewImage1(event){
+    document.getElementById('imgview1').src=URL.createObjectURL(event.target.files[0])
+}
+function viewImage2(event){
+    document.getElementById('imgview2').src=URL.createObjectURL(event.target.files[0])
+}
+function viewImage3(event){
+    document.getElementById('imgview3').src=URL.createObjectURL(event.target.files[0])
+}
+function viewImage4(event){
+    document.getElementById('imgview4').src=URL.createObjectURL(event.target.files[0])
+}
+</script>

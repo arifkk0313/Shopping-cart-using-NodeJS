@@ -1,0 +1,86 @@
+<div id="page-content">
+    <!-- Page Title -->
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper">
+                <h1 class="page-width">ORDER DETIALS</h1>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->
+
+
+
+
+
+
+    <div id="page-content">
+        <!--Page Title-->
+        <div class="page section-header text-center">
+            <div class="page-title">
+                <div class="wrapper">
+                    <h1 class="page-width"></h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                    <form action="#">
+                        <div class="wishlist-table table-content table-responsive">
+                            <table class="table table-bordered">
+
+                                <thead>
+                                    <tr>
+                                        
+                                         <th class="product-name text-center alt-font">Image</th>
+                                         <th class="product-name alt-font">Product Detials</th>
+                                        
+                                        <th class="product-price text-center alt-font">Amount</th>
+                                        
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each singleorder}}
+                                    
+                                    <tr>
+                                        
+
+                                        
+                                        
+                                        <td class="product-thumbnail text-center"> <a href=" "><img
+                                                    src="/products/{{this.product._id}}1.jpg" alt=""
+                                                    title="" /></a> </td>
+                                        <td class="product-price text-center"> <h4 class="no-margin"><a href="">For:{{this.product.catagory}}</a></h4>
+                                        <h6 class="no-margin"><a href="">Product:{{this.product.name}}</a></h6>
+                                     <h6 class="no-margin"><a href="">Brand:{{this.product.brand}}</a></h6>
+                                      <h6 class="no-margin"><a href="">Colour:{{this.product.colour}}</a></h6>
+                                     <h6 class="no-margin"><a href="">Price:{{this.product.price}}</a></h6>
+                                        <h6 class="no-margin"><a href="">Size:{{this.product.size}}</a></h6>
+                                        </td>
+                                        <td class="product-price text-center"><span
+                                                class="amount">{{this.product.price}}</span></td>                                                                                    
+                                        {{/each}}
+                                        
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Page Title -->
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper">
+                <h4 class="page-width"> <a href="/myorders" >Go Back</a><span aria-hidden="true"></span></h4>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->

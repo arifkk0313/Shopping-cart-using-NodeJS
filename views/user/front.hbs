@@ -1,0 +1,419 @@
+<body style="background: #e2e2e2c7;">
+    
+
+
+    <!-- Home Banner slider -->
+     <div class="slideshow slideshow-wrapper pb-section">
+        <div class="home-slideshow slideshow--large">
+            <div class="slide slide1 d-block">
+                <div class="slideimg blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="images/fashion.png"
+                        src="images/fashion.png" alt="DOTNOT Solly"
+                        title="DOTNOT Solly" />
+                    <div class="slideshow__text-wrap slideshow__overlay center">
+                        <div class="slideshow__text-content mt-0 center">
+                            <div class="container">
+                                <div class="wrap-caption center">
+                                    <p class="mega-small-title">Inroducing new</p>
+                                    <h2 class="h1 mega-title slideshow__title">DOTNOT Solly</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
+                                        only</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="slide slide1 d-block">
+                <div class="slideimg blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="images/fashion3.png"
+                        src="images/fashion3.png" alt="DOTNOT Terrain"
+                        title="DOTNOT Terrain" />
+                    <div class="slideshow__text-wrap slideshow__overlay center">
+                        <div class="slideshow__text-content mt-0 center">
+                            <div class="container">
+                                <div class="wrap-caption center">
+                                    <p class="mega-small-title">Inroducing new</p>
+                                    <h2 class="h1 mega-title slideshow__title">DOTNOT Terrain</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
+                                        only</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="slide slide1 d-block">
+                <div class="slideimg blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="images/fashion4.png"
+                        src="images/fashion4.png" alt="DOTNOT Lee"
+                        title="DOTNOT Lee" />
+                    <div class="slideshow__text-wrap slideshow__overlay center">
+                        <div class="slideshow__text-content mt-0 center">
+                            <div class="container">
+                                <div class="wrap-caption center">
+                                    <p class="mega-small-title">Inroducing new</p>
+                                    <h2 class="h1 mega-title slideshow__title">DOTNOT Lee</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
+                                        only</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2 d-block">
+                <div class="slideimg blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="images/fashion1.png"
+                        src="images/fashion1.png" alt="Happy Customers"
+                        title="Happy Customers" />
+                    <div class="slideshow__text-wrap slideshow__overlay center">
+                        <div class="slideshow__text-content mt-0 center">
+                            <div class="container">
+                                <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Happy Customers</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">Unique products by the world's top
+                                        designer</span>
+                                    
+                                        support</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section logo-section">
+        <div class="container">
+            <div class="row featured-brands-logo">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 brands-list">
+                    <div class="row brands-row logo-bar">
+                        {{#each brand}}
+                        <div class="col-12 brands-logo">
+                            <a href="/brandpage/{{this.name}}"><img style="height: 100px;" src="/brand/{{this._id}}11.jpg" alt="brandlogo"
+                                    title="" /></a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<hr>
+
+
+
+
+<div class="product-rows section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="h2">Let’s Get Personal</h2>
+                    <p>Our favorite pieces handpicked for you.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Product -->
+        
+            <div class="grid-products grid--view-items product-three-load-more">
+                <div class="row">
+                    {{#each data}}
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
+                        <!-- Product Image -->
+                        <div class="product-image">
+                            <!-- Product Image -->
+                            <a href="/productview/{{this._id}}">
+                                <!-- Image -->
+                                <img style="width:100%;height:350px" class="primary blur-up lazyload"
+                                    data-src="/products/{{this._id}}1.jpg" src="/products/{{this._id}}1.jpg" alt="image"
+                                    title="product" />
+                                <!-- End Image -->
+                                <!-- Hover Image -->
+                                <img style="width:100%;height:350px" class="hover blur-up lazyload"
+                                    data-src="/products/{{this._id}}2.jpg" src="/products/{{this._id}}2.jpg" alt="image"
+                                    title="product" />
+                                <!-- End Hover Image -->
+                                <!-- Product Label -->
+                                <div class="product-labels"><span class="lbl pr-label3">Popular</span></div>
+                                <!-- End Product Label -->
+                            </a>
+                            <!-- End Product Image -->
+
+                            <!-- Product Button -->
+                            <div class="button-set">
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Search">
+                                    <a href="/add-to-cart/{{this._id}}"
+                                        onClick="window.location.href=window.location.href"
+                                        class="btn compare add-to-compare"><i class="icon an an-search"></i></a>
+                                </div>
+
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Add to Cart">
+                                    <button style="background: black;color:rgb(255, 255, 255)"
+                                        onclick="addToCart('{{this._id}}')" class="btn compare add-to-compare"><i
+                                            class="icon an an-shopping-bag"></i></button>
+
+                                </div>
+
+                                <div class="compare-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="add to Wishlist">
+                                    <button style="background: black;color:rgb(255, 255, 255)"
+                                        onclick="addToWishlist('{{this._id}}')" class="btn compare add-to-compare"><i
+                                            class="icon an an-heart"></i></button>
+                                </div>
+
+
+                            </div>
+                            <!-- End product button -->
+                        </div>
+                        <!-- End Product Image -->
+
+                        <!-- Product Details -->
+                        <div class="product-details text-center">
+                            <!-- Product Name -->
+                            <div class="product-name">
+                                <a href="product-layout3.html">{{this.name}}</a>
+                            </div>
+                            <!-- End Product Name -->
+                            <div class="product-price">
+                                <span class="price">{{this.brand}}</span>
+                            </div>
+                            <!-- Product Price -->
+                            <div class="product-price">
+                                <span class="price">₹ {{this.price}}</span>
+                            </div>
+                            <!-- End Product Price -->
+
+                        </div>
+                        <!-- End Product Details -->
+                    </div>
+                    {{/each}}
+                    
+                </div>
+            </div>
+    </div>
+    <!-- End Grid Product -->
+</div>
+</div>
+<!-- End Let's Get Personal -->
+
+<!-- Video With Text -->
+<div class="section custom-content-style1">
+    <div class="container">
+        <div class="row align-items-center custom-content">
+            <!-- Video -->
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 custom-item">
+                <div class="custom__item-inner custom__item-inner--video">
+                    <div class="video-wrapper ratio ratio-16x9">
+                        <iframe src="http://www.youtube.com/embed/JJ3WNAyVu2I?rel=0&amp;showinfo=0&amp;vq=720"
+                            width="850" height="480" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- End Video -->
+            <!-- Content -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 custom-item">
+                <div class="custom-text custom-item-inner text-center text-md-start">
+                    <h4 class="h3">Spring Summer 2018 Trends</h4>
+                    <div class="rte-setting">
+                        <p class="mb-2">Introducing the hottest trends of the new season with our amazing SS18
+                            collection</p>
+                        <p class="mb-2"><strong>Lorem Ipsum</strong> is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</p>
+                    </div>
+                    <a class="btn border-btn-2 border border-1" style="color: rgb(170, 126, 59);"
+                        href="shop-right-sidebar.html">View Collection</a>
+                </div>
+            </div>
+            <!-- End Content -->
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Store Feature -->
+<div class="store-feature style3 mt-2 mb-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                <div class="store-info px-3 py-3 text-center">
+                    <div class="icons mb-3"><i class="icon an an-truck"></i></div>
+                    <div class="store-info-text">
+                        <h5>Free Worldwide Shipping</h5>
+                        <span class="sub-text">Free shipping on all US orders</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                <div class="store-info px-3 py-3 text-center">
+                    <div class="icons mb-3"><i class="icon an an-money-bill-alt"></i></div>
+                    <div class="store-info-text">
+                        <h5>Money Guarantee</h5>
+                        <span class="sub-text">30 days money back guarantee</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                <div class="store-info px-3 py-3 text-center">
+                    <div class="icons mb-3"><i class="icon an an-question-circle"></i></div>
+                    <div class="store-info-text">
+                        <h5>Top Notch Support</h5>
+                        <span class="sub-text">We support online 24/7 on day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                <div class="store-info px-3 py-3 text-center">
+                    <div class="icons mb-3"><i class="icon an an-lock"></i></div>
+                    <div class="store-info-text">
+                        <h5>Secure Payments</h5>
+                        <span class="sub-text">All payment are Secured, trusted.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Store Feature -->
+</div>
+
+
+<hr>
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div id="modalbody" class="modal-body">
+                <div class="thank-you-pop">
+                    <img id="wishlistimage"
+                        src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                    <h1 id="thankyou"></h1>
+
+
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function addToWishlist(proId) {
+        var bs_modal = $('#modal');
+        var message = document.getElementById('thankyou')
+        var image = document.getElementById('wishlistimage')
+        $.ajax({
+            url: '/add-to-wishlist/' + proId,
+            method: 'get',
+            success: (response) => {
+                console.log(response)
+                if (response.login) {
+                    location.href = "/login"
+                }
+                else {
+
+                    console.log(response)
+                    if (response == "error") {
+
+
+                        bs_modal.modal('show');
+                        message.innerHTML = "Product already in Wishlist"
+                        image.src = "http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png"
+                    }
+                    else {
+
+
+                        bs_modal.modal('show');
+                        message.innerHTML = "Product added to wishlist"
+                    }
+
+                }
+
+
+
+
+
+
+            }
+        })
+    }
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    function addToCart(proId) {
+        var bs_modal = $('#modal');
+        var message = document.getElementById('thankyou')
+        var image = document.getElementById('wishlistimage')
+        $.ajax({
+            url: '/add-to-cart/' + proId,
+            method: 'get',
+            success: (response) => {
+                console.log(response)
+                if (response.login) {
+                    location.href = "/login"
+                }
+                else {
+
+                    console.log(response)
+                    if (response == "error") {
+
+
+                        bs_modal.modal('show');
+                        message.innerHTML = "Product already in cart"
+                        image.src = "http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png"
+                    }
+                    else {
+
+
+                        bs_modal.modal('show');
+                        message.innerHTML = "Product added to cart"
+                    }
+
+                }
+
+
+
+
+
+
+            }
+        })
+    }
+</script>
+</body>

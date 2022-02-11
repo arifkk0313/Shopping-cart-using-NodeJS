@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/user/assets/images/favicon.png" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/user/assets/css/plugins.css" />
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/user/assets/css/style.css" />
+    <link rel="stylesheet" href="/user/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/user/assets/css/otp.css">
+    <link id="theme-style" rel="stylesheet" href="/admin/css/portal.css">
+    
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    {{#if admin}}
+    {{>admin-header}}
+    {{else}}
+    {{>user-header}}
+    {{/if}}
+
+
+    {{{body}}}
+
+    {{#if admin}}
+    {{else}}
+    {{>footer}}
+    {{/if}}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    {{!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="/user/assets/js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="/user/assets/js/main.js"></script>
+    <script src="/user/assets/js/otp.js"></script>
+    <script src="/user/assets/js/validation.js"></script>
+    <script src="/user/assets/js/loginvalidation.js"></script>
+    <script src="/user/assets/js/addcart.js"></script>
+    <script src="/user/assets/js/wishlist.js"></script>
+    <!-- Photoswipe Gallery -->
+    <script src="/user/assets/js/vendor/photoswipe.min.js"></script>
+    <script src="/user/assets/js/vendor/photoswipe-ui-default.min.js"></script>
+    <script src="/admin/js/app.js"></script>
+    <script src="/admin/js/charts-demo.js"></script>
+    <script src="/admin/js/index-charts.js"></script>
+    <script src="/admin/plugins/fontawesome/js/all.min.js"></script>
+    
+    <script src="/javascript/script.js"></script>
+
+</style=>
+
+</html>

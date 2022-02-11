@@ -1,0 +1,102 @@
+
+<div class="bredcrumbWrap bredcrumbWrapPage bredcrumb-style2 text-center">
+    <div class="container breadcrumbs">
+        <a href="/" title="Back to the home page">Home</a><span aria-hidden="true">|</span><span
+            class="title-bold">Login</span>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<div class="container">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 box mb-4 mb-md-0">
+            <h3>New Customers</h3>
+            <p>By creating an account with our store, you will be able to move through the checkout process faster,
+                store multiple shipping addresses, view and track your orders in your account and more.</p>
+            <a href="/register" class="btn" style="color: rgb(12, 24, 34);border:black 1px solid">Create an account</a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 box">
+            <div class="mb-4">
+                <form method="post" action="/login" id="CustomerRegisterForm" accept-charset="UTF-8"
+                    class="customer-form">
+                    <h3>Registered Customers</h3>
+                    {{#if logginErr}}
+                        <p class="error" style="color: rgb(237, 116, 100);">{{logginErr}} 
+                        </p>
+                    {{/if}}
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="CustomerEmail">Email <span class="required">*</span></label>
+                                <input type="email" name="Email" placeholder="" id="CustomerEmail" autofocus />
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="CustomerPassword">Password <span class="required">*</span></label>
+                                <input type="password" value="" name="Password" placeholder="" id="CustomerPassword"
+                                    class="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" class="btn mb-3" value="Sign In"
+                                style="color: rgb(12, 24, 34);border:black 1px solid">
+                            <p class="mb-4">
+                                <a href="/forget-password" style="color: black;">Forgot your password?</a> &nbsp; |
+                                &nbsp;
+                                <a href="/register" id="customer_register_link" style="color: black;">Create account</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- End Main Content -->
+        <div class="col-9 col-sm-9 col-md-6 col-lg-6 box mb-4 mb-md-0">
+        <h3>LOGIN WITH MOBILE NUMBER</h3>
+        <p>You can also login with your mobile number </p>
+        <div class="mb-4">
+          <form onsubmit="return loginvalidationOTP()" method="post" action="/loginphonenumber" class="customer-form">
+            <div class="row">
+              <div class="col-9 col-sm-9 col-md-9 col-lg-9">
+                <div class="form-group">
+                  <label for="phonenumber">PhoneNumber
+                    <span class="required">*</span></label>
+                  <input type="number" name="phonenumber" placeholder="enter your phonenumber" id="phonenumber"
+                    autofocus />
+                </div>
+                {{!-- {{#if loginErrphn}} --}}
+            <p class="error" style="color:#ff0000;">** This phone number is not registered
+            </p>
+            {{!-- {{/if}} --}}
+             </div>
+                {{!-- {{#if passchange}} --}}
+            <p class="error" style="color:#ff0000;">** Login with your new password
+            </p>
+            {{!-- {{/if}} --}}
+                <span id="PhoneNumber" class="text-danger font-weight-regular">
+                </span>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="submit" style="color: rgb(12, 24, 34);border:black 1px solid" class="btn mb-3" value="Sent OTP">
+                {{!-- <button value="submit">submit</button> --}}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<script src="assets/js/plugins.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
